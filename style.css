@@ -672,3 +672,19 @@ h4 {
 	font-size: 1.5rem;
 	font-weight: 400;
 }
+
+/* My styles */
+
+.cookie-message {
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
+	padding: 1rem;
+
+	transition: all 0.3s ease;
+}
+
+.btn--close-cookie {
+	padding: 0.75rem 2.25rem;
+	font-size: 1.25rem;
+}
