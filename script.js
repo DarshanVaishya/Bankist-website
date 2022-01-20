@@ -7,13 +7,18 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+
 const cookieCloseBtn = document.querySelector(".btn--close-cookie");
+
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
+const navLinksEl = document.querySelector(".nav__links");
+
+// const tabBtns = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
 
 ///////////////////////////////////////
 // Modal window
-
 function openModal() {
 	modal.classList.remove("hidden");
 	overlay.classList.remove("hidden");
@@ -37,7 +42,6 @@ document.addEventListener("keydown", function (e) {
 
 ///////////////////////////////////////
 // Cookies
-
 cookieCloseBtn.addEventListener("click", () => {
 	const box = cookieCloseBtn.parentElement;
 	box.classList.add("hidden");
@@ -46,7 +50,6 @@ cookieCloseBtn.addEventListener("click", () => {
 
 ///////////////////////////////////////
 // Button scrolling
-
 btnScrollTo.addEventListener("click", (e) => {
 	e.preventDefault();
 	const s1Coords = section1.getBoundingClientRect();
@@ -64,13 +67,30 @@ btnScrollTo.addEventListener("click", (e) => {
 
 ///////////////////////////////////////
 // Page navigation
-
-// Event delegation: We know that events bubble up
-// So instead of having an event listener on all of the links
-// We add one to their parent element nav
-document.querySelector(".nav__links").addEventListener("click", (e) => {
+navLinksEl.addEventListener("click", (e) => {
 	e.preventDefault();
 	const targetID = e.target.getAttribute("href");
 	if (targetID === "#" || !e.target.classList.contains("nav__link")) return;
 	document.querySelector(targetID).scrollIntoView({ behavior: "smooth" });
+});
+
+///////////////////////////////////////
+// Tabbed components
+tabsContainer.addEventListener("click", (e) => {
+	if (e.target === tabsContainer) return;
+
+	const activeClass = "operations__tab--active";
+	const clickedBtn = e.target.closest(".operations__tab");
+
+	// Activate clicked tab
+	document.querySelector("." + activeClass).classList.remove(activeClass);
+	clickedBtn.classList.add(activeClass);
+
+	// Activate content area
+	document
+		.querySelector(`.operations__content--active`)
+		.classList.remove("operations__content--active");
+	document
+		.querySelector(`.operations__content--${clickedBtn.dataset.tab}`)
+		.classList.add("operations__content--active");
 });

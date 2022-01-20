@@ -691,8 +691,9 @@ h4 {
 	font-size: 1.25rem;
 }
 
-/* Scrollbar styles */
+/* My edits */
 
+/* Scrollbar styles */
 /* Chrome and safari */
 ::-webkit-scrollbar {
 	width: 1em;
@@ -713,6 +714,7 @@ h4 {
 	background-color: rgba(55, 55, 55, 0.8);
 }
 
+/* Firefox */
 @supports (scrollbar-color: red blue) {
 	* {
 		scrollbar-color: rgb(55, 55, 55) #f3f3f3;
