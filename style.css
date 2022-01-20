@@ -695,7 +695,7 @@ h4 {
 
 /* Chrome and safari */
 ::-webkit-scrollbar {
-	width: 1vw;
+	width: 1em;
 }
 
 ::-webkit-scrollbar-track {

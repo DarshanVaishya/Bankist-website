@@ -70,10 +70,7 @@ btnScrollTo.addEventListener("click", (e) => {
 // We add one to their parent element nav
 document.querySelector(".nav__links").addEventListener("click", (e) => {
 	e.preventDefault();
-
 	const targetID = e.target.getAttribute("href");
 	if (targetID === "#" || !e.target.classList.contains("nav__link")) return;
-	const targetEl = document.querySelector(targetID);
-
-	targetEl.scrollIntoView({ behavior: "smooth" });
+	document.querySelector(targetID).scrollIntoView({ behavior: "smooth" });
 });
