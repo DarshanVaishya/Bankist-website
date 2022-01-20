@@ -11,3 +11,4 @@ Live preview: [Link](https://bankist-web.darshanvaishya.xyz/)
 - HTML
 - CSS
 - Javscript
+- Intersection Observer API

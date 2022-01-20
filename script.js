@@ -12,7 +12,9 @@ const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 const navLinksEl = document.querySelector(".nav__links");
 const tabsContainer = document.querySelector(".operations__tab-container");
-const nav = document.querySelector(".nav");
+const navEl = document.querySelector(".nav");
+const navHeight = navEl.getBoundingClientRect().height;
+const headerEl = document.querySelector(".header");
 
 ///////////////////////////////////////
 // Modal window
@@ -107,6 +109,22 @@ function handleHover(e) {
 	logo.style.opacity = this;
 }
 
-nav.addEventListener("mouseover", handleHover.bind(0.5));
+navEl.addEventListener("mouseover", handleHover.bind(0.5));
+navEl.addEventListener("mouseout", handleHover.bind(1));
 
-nav.addEventListener("mouseout", handleHover.bind(1));
+///////////////////////////////////////
+// Sticky nav bar
+function stickyNav(entries, observer) {
+	entries.forEach((entry) => {
+		if (!entry.isIntersecting) navEl.classList.add("sticky");
+		else navEl.classList.remove("sticky");
+	});
+}
+
+const observerOptions = {
+	root: null,
+	threshold: 0,
+	rootMargin: `-${navHeight}px`,
+};
+const observer = new IntersectionObserver(stickyNav, observerOptions);
+observer.observe(headerEl);
