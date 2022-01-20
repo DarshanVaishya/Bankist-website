@@ -15,6 +15,7 @@ const tabsContainer = document.querySelector(".operations__tab-container");
 const navEl = document.querySelector(".nav");
 const navHeight = navEl.getBoundingClientRect().height;
 const headerEl = document.querySelector(".header");
+const allSections = document.querySelectorAll(".section");
 
 ///////////////////////////////////////
 // Modal window
@@ -121,10 +122,36 @@ function stickyNav(entries, observer) {
 	});
 }
 
-const observerOptions = {
+let observerOptions = {
 	root: null,
 	threshold: 0,
 	rootMargin: `-${navHeight}px`,
 };
 const observer = new IntersectionObserver(stickyNav, observerOptions);
 observer.observe(headerEl);
+
+///////////////////////////////////////
+// Sticky nav bar
+function revealSection(entries, observer) {
+	const [entry] = entries;
+	if (!entry.isIntersecting) return;
+
+	entry.target.classList.remove("section--hidden");
+	observer.unobserve(entry.target);
+}
+observerOptions = {
+	root: null,
+	threshold: 0.15,
+};
+const sectionObserver = new IntersectionObserver(
+	revealSection,
+	observerOptions
+);
+
+allSections.forEach((section) => {
+	section.classList.add("section--hidden");
+});
+
+allSections.forEach((section) => {
+	sectionObserver.observe(section);
+});
