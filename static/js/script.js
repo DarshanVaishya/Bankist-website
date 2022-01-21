@@ -21,6 +21,8 @@ const slides = document.querySelectorAll(".slide");
 const slideLeft = document.querySelector(".slider__btn--left");
 const slideRight = document.querySelector(".slider__btn--right");
 const dotsContainer = document.querySelector(".dots");
+const iconMenu = document.querySelector(".icon-menu");
+const iconClose = document.querySelector(".icon-close");
 
 ///////////////////////////////////////
 // Modal window
@@ -74,6 +76,7 @@ btnScrollTo.addEventListener("click", (e) => {
 // Page navigation
 navLinksEl.addEventListener("click", (e) => {
 	e.preventDefault();
+	closeNav();
 	const targetID = e.target.getAttribute("href");
 	if (targetID === "#" || !e.target.classList.contains("nav__link")) return;
 	document.querySelector(targetID).scrollIntoView({ behavior: "smooth" });
@@ -235,3 +238,21 @@ dotsContainer.addEventListener("click", (e) => {
 		updateSlides();
 	}
 });
+
+iconMenu.addEventListener("click", () => {
+	navLinksEl.style.transform = "translateX(0)";
+	navLinksEl.style.opacity = 1;
+	navLinksEl.style.visibility = "visible";
+	iconMenu.style.display = "none";
+	iconClose.style.display = "block";
+});
+
+function closeNav() {
+	navLinksEl.style.transform = "translateX(100%)";
+	navLinksEl.style.opacity = 0;
+	navLinksEl.style.visibility = "hidden";
+	iconMenu.style.display = "block";
+	iconClose.style.display = "none";
+}
+
+iconClose.addEventListener("click", closeNav);
