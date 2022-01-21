@@ -1,6 +1,6 @@
-# Bankist Website (WIP)
+# Bankist Website (21st Jan, 2022)
 
-Description
+This website is created for a fictional bank named Bankist. The website has a beautiful and easy to use UI which is fully responsive to Desktop, Tablet and Mobile view. It has features such as lazy image loading, testimonials carousel and modal windows.
 
 Live preview: [Link](https://bankist-web.darshanvaishya.xyz/)
 
@@ -12,3 +12,25 @@ Live preview: [Link](https://bankist-web.darshanvaishya.xyz/)
 - CSS
 - Javscript
 - Intersection Observer API
+
+## Screenshots
+
+### Hero section
+
+![Hero section](./static/img/screenshots/main.png)
+
+### First section
+
+![First section](./static/img/screenshots/section1.png)
+
+### Tabbed information
+
+![Tabbed section](./static/img/screenshots/tabbed.png)
+
+### Testimonials carousel
+
+![Testimonials carousel](./static/img/screenshots/testimonial.png)
+
+### Footer section
+
+![Footer section](./static/img/screenshots/footer.png)
