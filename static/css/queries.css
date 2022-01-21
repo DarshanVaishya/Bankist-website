@@ -68,15 +68,24 @@
 		transition: all 1s ease-out;
 	}
 
+	.nav-open {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+	}
+
 	.nav__link:link {
 		font-size: 4rem;
 	}
 
 	.icon {
-		display: block;
 		width: 32px;
 		height: 32px;
 		z-index: 1000;
+	}
+
+	.icon-menu {
+		display: block;
 	}
 
 	.icon-close {

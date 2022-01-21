@@ -64,7 +64,7 @@ btnScrollTo.addEventListener("click", (e) => {
 	// Old method
 	window.scrollTo({
 		left: window.pageXOffset + s1Coords.x,
-		top: window.pageYOffset + s1Coords.y,
+		top: window.pageYOffset + s1Coords.y - navHeight,
 		behavior: "smooth",
 	});
 
@@ -240,17 +240,13 @@ dotsContainer.addEventListener("click", (e) => {
 });
 
 iconMenu.addEventListener("click", () => {
-	navLinksEl.style.transform = "translateX(0)";
-	navLinksEl.style.opacity = 1;
-	navLinksEl.style.visibility = "visible";
+	navLinksEl.classList.add("nav-open");
 	iconMenu.style.display = "none";
 	iconClose.style.display = "block";
 });
 
 function closeNav() {
-	navLinksEl.style.transform = "translateX(100%)";
-	navLinksEl.style.opacity = 0;
-	navLinksEl.style.visibility = "hidden";
+	navLinksEl.classList.remove("nav-open");
 	iconMenu.style.display = "block";
 	iconClose.style.display = "none";
 }
