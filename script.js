@@ -16,6 +16,7 @@ const navEl = document.querySelector(".nav");
 const navHeight = navEl.getBoundingClientRect().height;
 const headerEl = document.querySelector(".header");
 const allSections = document.querySelectorAll(".section");
+const lazyImages = document.querySelectorAll(".lazy-img");
 
 ///////////////////////////////////////
 // Modal window
@@ -122,36 +123,52 @@ function stickyNav(entries, observer) {
 	});
 }
 
-let observerOptions = {
+const observer = new IntersectionObserver(stickyNav, {
 	root: null,
 	threshold: 0,
 	rootMargin: `-${navHeight}px`,
-};
-const observer = new IntersectionObserver(stickyNav, observerOptions);
+});
 observer.observe(headerEl);
 
 ///////////////////////////////////////
 // Sticky nav bar
 function revealSection(entries, observer) {
-	const [entry] = entries;
-	if (!entry.isIntersecting) return;
+	entries.forEach((entry) => {
+		if (!entry.isIntersecting) return;
 
-	entry.target.classList.remove("section--hidden");
-	observer.unobserve(entry.target);
+		entry.target.classList.remove("section--hidden");
+		observer.unobserve(entry.target);
+	});
 }
-observerOptions = {
+
+const sectionObserver = new IntersectionObserver(revealSection, {
 	root: null,
 	threshold: 0.15,
-};
-const sectionObserver = new IntersectionObserver(
-	revealSection,
-	observerOptions
-);
+});
 
 allSections.forEach((section) => {
 	section.classList.add("section--hidden");
-});
-
-allSections.forEach((section) => {
 	sectionObserver.observe(section);
 });
+
+///////////////////////////////////////
+// lazy loading images
+
+function revealImage(entries, observer) {
+	console.log(entries);
+	entries.forEach((entry) => {
+		if (!entry.isIntersecting) return;
+
+		const img = entry.target;
+		img.src = img.dataset.src;
+		img.addEventListener("load", () => img.classList.remove("lazy-img"));
+		observer.unobserve(img);
+	});
+}
+
+const imgObserver = new IntersectionObserver(revealImage, {
+	root: null,
+	threshold: 0,
+	rootMargin: "200px",
+});
+lazyImages.forEach((img) => imgObserver.observe(img));
