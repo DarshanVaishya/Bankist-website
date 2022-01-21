@@ -248,7 +248,6 @@ iconMenu.addEventListener("click", () => {
 });
 
 function closeNav() {
-	console.log("HELLLO");
 	navLinksEl.style.transform = "translateX(100%)";
 	navLinksEl.style.opacity = 0;
 	navLinksEl.style.visibility = "hidden";
