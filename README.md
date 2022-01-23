@@ -12,6 +12,7 @@ Live preview: [Link](https://bankist-web.darshanvaishya.xyz/)
 - CSS
 - Javscript
 - Intersection Observer API
+- Open Graph Meta Tags
 
 ## Screenshots
 

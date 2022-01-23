@@ -698,6 +698,12 @@ h4 {
 	display: none;
 }
 
+.slider__btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* Scrollbar styles */
 /* Chrome and safari */
 ::-webkit-scrollbar {
