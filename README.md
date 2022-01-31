@@ -68,7 +68,9 @@ function updateSlides() {
 
 I learnt about event delegation while making the navigation bar effect. This was really mind blowing, and made me understand concept of event bubbling in more detail. I understood the importance of event delegation and how a lot of event listeners can lead to reduced website performance.
 
-Another thing I learned is implementing smooth scrolling using JavaScript. I used both `window.scrollTo()` and `element.scrollIntoView()`.
+Another thing I learned is implementing smooth scrolling using JavaScript. I used both `window.scrollTo()` and `element.scrollIntoView()` methods.
+
+I learned how to style scrollbars using CSS from this [tutorial](https://www.youtube.com/watch?v=lvKK2fs6h4I) by Kevin Powell. I made them identical for chrome and firefox.
 
 ## Screenshots
 
