@@ -76,27 +76,27 @@ I learned how to style scrollbars using CSS from this [tutorial](https://www.you
 
 ### Open Graph card
 
-![OG card](./static/img/screenshots/og-tag.png)
+![OG card](./assets/img/screenshots/og-tag.png)
 
 ### Hero section
 
-![Hero section](./static/img/screenshots/main.png)
+![Hero section](./assets/img/screenshots/main.png)
 
 ### First section
 
-![First section](./static/img/screenshots/section1.png)
+![First section](./assets/img/screenshots/section1.png)
 
 ### Tabbed information
 
-![Tabbed section](./static/img/screenshots/tabbed.png)
+![Tabbed section](./assets/img/screenshots/tabbed.png)
 
 ### Testimonials carousel
 
-![Testimonials carousel](./static/img/screenshots/testimonial.png)
+![Testimonials carousel](./assets/img/screenshots/testimonial.png)
 
 ### Footer section
 
-![Footer section](./static/img/screenshots/footer.png)
+![Footer section](./assets/img/screenshots/footer.png)
 
 ## Directory structure
 
@@ -104,7 +104,7 @@ I learned how to style scrollbars using CSS from this [tutorial](https://www.you
 .
 ├── index.html
 ├── README.md
-└── static
+└── assets
     ├── css
     │   ├── queries.css
     │   └── style.css
