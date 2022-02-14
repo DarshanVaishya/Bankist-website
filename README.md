@@ -1,7 +1,8 @@
 # Bankist Website (21st Jan, 2022)
 
-## Table of contents
-
+<details>
+ <summary><strong>Table of Contents</strong> (click to expand)</summary>
+	
 - [Overview](#overview)
   - [Technologies used](#technologies-used)
 - [Challenges faced](#challenges-faced)
@@ -10,7 +11,8 @@
 - [Directory structure](#directory-structure)
 - [Collaboration](#collaboration)
 - [Contact me](#contact-me)
-
+</details>
+	
 ## Overview
 
 This website is created for a fictional bank named Bankist. The website has a beautiful and easy to use UI which is fully responsive to Desktop, Tablet and Mobile view. It has features such as lazy image loading, testimonials carousel and modal windows.
