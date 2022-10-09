@@ -17,7 +17,7 @@
 
 This website is created for a fictional bank named Bankist. The website has a beautiful and easy to use UI which is fully responsive to Desktop, Tablet and Mobile view. It has features such as lazy image loading, testimonials carousel and modal windows.
 
-Live preview: [Link](https://bankist-web.darshanvaishya.xyz/)
+Live preview: [Link](https://bankist-web.darshanv.dev)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7f560470-5c67-4cc8-a0c0-89b891665483/deploy-status)](https://app.netlify.com/sites/pensive-ramanujan-f44c07/deploys)
 
